@@ -41,14 +41,15 @@ def upload_file():
 
                 finish_time = time.time() - start_time
 
-                if not nik or not nama or not provinsi or not kabupaten:
+                # if not nik or not nama or not provinsi or not kabupaten:
+                if not nik or not nama:
                     return jsonify({
                         'error': True,
                         'message': 'Resolusi foto terlalu rendah, silakan coba lagi.'
                     })
 
                 return jsonify({
-                    'error': False,
+                    'error': True,
                     'message': 'Proses OCR Berhasil',
                     'result': {
                         'nik': str(nik),
