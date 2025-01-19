@@ -5,15 +5,13 @@ import ocr
 import time
 import cnn_detect
 from flask import Flask, request, jsonify
+from flask import Flask, render_template, request, flash
 from PIL import Image
-from flask_cors import CORS  # Import flask-cors
+from flask import Flask, render_template, request, flash
 from keras.preprocessing import image
 
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
-
-# Aktifkan CORS untuk semua origin (boleh disesuaikan jika perlu)
-CORS(app)
 
 @app.route('/ocr', methods = ['POST'])
 def upload_file():
