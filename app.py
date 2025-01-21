@@ -47,7 +47,7 @@ def upload_file():
                 if not nik or not nama:
                     return jsonify({
                         'error': True,
-                        'message': 'Resolusi foto terlalu rendah, silakan coba lagi.'
+                        'message': 'Resolusi foto terlalu rendah, silakan coba lagi. Gunakan resolusi yang lebih baik'
                     })
 
                 return jsonify({
@@ -83,7 +83,7 @@ def upload_file():
             print(e)
             return jsonify({
                 'error': True,
-                'message': 'Maaf, KTP tidak terdeteksi'
+                'message': 'Maaf, KTP tidak terdeteksi. Gunakan resolusi yang lebih baik'
             })
 
 if __name__ == "__main__":
